@@ -4,14 +4,17 @@ class Program
 {    
     static void Main(string[] args)
     {
+        // Khai báo biến để lặp lại việc hiện menu
         bool next = true;
         while (next)
         {
+            // Hiện menu
             Console.WriteLine("=== Menu ===");
             Console.WriteLine("1. Giai he phuong trinh bac nhat 2 an");
             Console.WriteLine("2. Kiem tra ma tran doi xung qua duong cheo chinh");
 
             // Lấy đầu vào từ người dùng
+            Console.Write("\nBan chon giai bai tap so: ");
             int choice = int.Parse(Console.ReadLine());
 
             Console.WriteLine("\n");            
@@ -22,6 +25,7 @@ class Program
 
                     double a1, b1, c1, a2, b2, c2;
 
+                    // Nhập các hệ số của phương trình
                     Console.WriteLine("Nhap vao cac he so cua he phuong trinh a1x + b1y = c1: ");
                     Console.Write("Nhap vao so a1: ");
                     a1 = double.Parse(Console.ReadLine());
@@ -30,6 +34,7 @@ class Program
                     Console.Write("Nhap vao so c1: ");
                     c1 = double.Parse(Console.ReadLine());
 
+                    // Nhập các hệ số của phương trình
                     Console.WriteLine("\nNhap vao cac he so cua he phuong trinh a2x + b2y = c2: ");
                     Console.Write("Nhap vao so a2: ");
                     a2 = double.Parse(Console.ReadLine());
@@ -119,14 +124,12 @@ class Program
                     else
                     {
                         Console.WriteLine("\nMa tran nay khong la ma tran doi xung qua duong cheo chinh.");
-                    }
-
-                    Console.WriteLine();
-
-                    Console.ReadKey();
+                    }                                        
                     break;
                 default:
-                    Console.WriteLine("Khong co lua chon nay");                        
+                    Console.WriteLine("Khong co lua chon nay");
+                    // Thoát khỏi chương trình khi nhập giá trị khác 1 và 2
+                    next = false;
                     break;
             }
         }       
